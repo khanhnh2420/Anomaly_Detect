@@ -10,5 +10,7 @@ def auto_config(profile):
         "use_local": True,
         "use_sparse": True,
         "early_stopping": True,
-        "patience": 5
+        "patience": 5,
+        "fusion_method": "rank" # Use the new rank-based fusion by default
+
     }

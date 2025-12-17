@@ -1,6 +1,7 @@
 numpy
 pandas
 scikit-learn
+scikit-learn-intelex
 torch
 joblib
 matplotlib

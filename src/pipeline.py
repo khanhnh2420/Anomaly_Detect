@@ -86,7 +86,7 @@ def run_pipeline(csv_path, label_col=None):
     if cfg["use_sparse"]:
         scores["sparse"] = sparse_detector(Xp)
 
-    final_score = fuse_scores(scores)
+    final_score = fuse_scores(scores, method=cfg["fusion_method"])
 
     if y is not None:
         th = best_f1_threshold(y, final_score)
@@ -98,4 +98,4 @@ def run_pipeline(csv_path, label_col=None):
     if y is not None:
         print("METRICS:", evaluate(y, y_pred, final_score))
 
-    return final_score, y_pred, latent, rec_err
+    return final_score, y_pred
